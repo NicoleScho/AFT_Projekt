@@ -57,15 +57,25 @@ module.exports = function(grunt) {
                     'public/main.purge.css': ['public/main.css']
                 }
             }
+        },
+
+        svgmin: {
+            dist: {
+                files: {
+                    'public/Logo.svgmin.svg': 'assets/img/Logo.svg'
+                }
+            }
         }
     });
+
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
     grunt.loadNpmTasks('grunt-purgecss');
+    grunt.loadNpmTasks('grunt-svgmin');
 
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.registerTask('default', ['sass', 'cssmin', 'concat', 'uglify', 'purgecss']);
+    grunt.registerTask('default', ['sass', 'cssmin', 'concat', 'uglify', 'purgecss', 'svgmin']);
 };
