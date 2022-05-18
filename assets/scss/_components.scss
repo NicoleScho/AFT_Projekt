@@ -1,0 +1,14 @@
+.headline {
+  color:$headline1;
+  size: 5em;
+}
+
+.headline2 {
+  @extend .headline;
+  size: 4em;
+}
+
+.svg {
+  width: 20%;
+  height: auto;
+}
