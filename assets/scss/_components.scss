@@ -1,3 +1,4 @@
+@import "mixins";
 body {
   font-family: Nunito, serif;
 }
@@ -25,7 +26,8 @@ body {
 
 .coloredBox {
   //$color, $size, $style, $background, $radius
-  //@include border($box1, 0.25em, solid, aliceblue, 0.3em);
+  @include border($box1, 0.25em, solid, aliceblue, 0.3em);
+  @include boxSpacing(1em, 0.5em, 2em);
   //background-color: aliceblue;
   //border: .25em solid $box1;
 }

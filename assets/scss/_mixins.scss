@@ -3,3 +3,8 @@
   background-color: $background;
   border-radius: $radius;
 }
+
+@mixin boxSpacing($padding, $marginSides, $marginTopBottom) {
+  padding: $padding;
+  margin: $marginTopBottom, $marginSides;
+}
