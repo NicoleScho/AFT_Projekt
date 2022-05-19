@@ -25,7 +25,7 @@ body {
 
 .coloredBox {
   //$color, $size, $style, $background, $radius
-  @include border($box1, 0.25em, solid, aliceblue, 0.3em);
+  //@include border($box1, 0.25em, solid, aliceblue, 0.3em);
   //background-color: aliceblue;
   //border: .25em solid $box1;
 }
