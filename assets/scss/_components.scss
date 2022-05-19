@@ -4,6 +4,7 @@ body {
 
 .headline {
   color:$headline1;
+  font-weight: bold;
   size: 5em;
 }
 
@@ -17,6 +18,24 @@ body {
   height: auto;
 }
 
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
+.coloredBox {
+  //$color, $size, $style, $background, $radius
+  @include border($box1, 0.25em, solid, aliceblue, 0.3em);
+  //background-color: aliceblue;
+  //border: .25em solid $box1;
+}
+
+.coloredBox2 {
+  @extend .coloredBox;
+  border-style: dashed;
+}
+
 .uselessClass {
     background-color: $highlight;
+    size: 4em;
 }
