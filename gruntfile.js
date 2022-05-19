@@ -35,7 +35,7 @@ module.exports = function(grunt) {
                     style: 'expanded'
                 },
                 files: {                         // Dictionary of files
-                    'public/main.css': 'assets/scss/main.scss',       // 'destination': 'source'
+                    'public/main.full.css': 'assets/scss/main.scss',       // 'destination': 'source'
                 }
             }
         },
@@ -43,7 +43,7 @@ module.exports = function(grunt) {
         cssmin: {
             target: {
                 files: {
-                    'public/main.min.css': ['public/main.purge.css']
+                    'public/main.min.css': ['public/main.css']
                 }
             }
         },
@@ -54,7 +54,7 @@ module.exports = function(grunt) {
                     content: ['index.html']
                 },
                 files: {
-                    'public/main.purge.css': ['public/main.css']
+                    'public/main.css': ['public/main.full.css']
                 }
             }
         },
@@ -77,5 +77,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-svgmin');
 
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.registerTask('default', ['sass', 'cssmin', 'concat', 'uglify', 'purgecss', 'svgmin']);
+    grunt.registerTask('default', ['sass',  'concat', 'uglify', 'purgecss', 'cssmin', 'svgmin']);
 };
+

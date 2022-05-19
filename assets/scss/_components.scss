@@ -4,6 +4,7 @@ body {
 }
 
 .headline {
+  text-align: center;
   color:$headline1;
   font-weight: bold;
   size: 5em;
@@ -12,6 +13,11 @@ body {
 .headline2 {
   @extend .headline;
   size: 4em;
+}
+
+.headline3 {
+  @extend .headline2;
+  color: $headline3;
 }
 
 .svg {
