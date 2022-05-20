@@ -1,20 +1,5 @@
 module.exports = function(grunt) {
     grunt.initConfig({
-        concat: {
-            dist: {
-                src: ['assets/js/cookiehint.js', 'assets/js/responsive-table.js'],
-                dest: 'public/main.js',
-            },
-        },
-
-        uglify: {
-            my_target: {
-                files: {
-                    'public/main.min.js': ['public/main.js']
-                }
-            }
-        },
-
         watch: {
             css: {
                 files: 'assets/**/*.scss',
@@ -23,19 +8,15 @@ module.exports = function(grunt) {
                     livereload: true,
                 },
             },
-            scripts: {
-                files: ['assets/**/*.js'],
-                tasks: ['concat', 'uglify'],
-            },
         },
 
-        sass: {                              // Task
-            dist: {                            // Target
-                options: {                       // Target options
+        sass: {
+            dist: {
+                options: {
                     style: 'expanded'
                 },
-                files: {                         // Dictionary of files
-                    'public/main.full.css': 'assets/scss/main.scss',       // 'destination': 'source'
+                files: {
+                    'public/main.full.css': 'assets/scss/main.scss',
                 }
             }
         },
@@ -70,13 +51,11 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
 
     grunt.loadNpmTasks('grunt-purgecss');
     grunt.loadNpmTasks('grunt-svgmin');
 
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.registerTask('default', ['sass',  'concat', 'uglify', 'purgecss', 'cssmin', 'svgmin']);
+    grunt.registerTask('default', ['sass', 'purgecss', 'cssmin', 'svgmin']);
 };
 
