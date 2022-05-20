@@ -7,16 +7,17 @@ body {
   text-align: center;
   color:$headline1;
   font-weight: bold;
-  size: 5em;
+  font-size: 2.8em;
 }
 
 .headline2 {
   @extend .headline;
-  size: 4em;
+  font-size: 2em;
 }
 
 .headline3 {
   @extend .headline2;
+  font-size: 1.5em;
   color: $headline3;
 }
 
@@ -31,14 +32,14 @@ body {
 .flex {
   display: flex;
   justify-content: center;
+  gap: 5%
 }
 
 .coloredBox {
   //$color, $size, $style, $background, $radius
   @include border($box1, 0.25em, solid, aliceblue, 0.3em);
-  @include boxSpacing(1em, 0.5em, 2em);
-  //background-color: aliceblue;
-  //border: .25em solid $box1;
+  @include boxSpacing(1em, 100%);
+
 }
 
 .coloredBox2 {
@@ -46,7 +47,18 @@ body {
   border-style: dashed;
 }
 
+.coloredBox3 {
+  @extend .coloredBox;
+  background-color: lightblue;
+  @include boxSpacing(1em, 75%);
+}
+
+th{
+  background-color: lightsteelblue;
+  @include boxSpacing(.5em, auto);
+}
+
 .uselessClass {
-    background-color: $highlight;
-    size: 4em;
+    background-color: $headline3;
+    font-size: 4em;
 }
